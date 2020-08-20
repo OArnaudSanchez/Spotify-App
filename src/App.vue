@@ -1,32 +1,90 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div>
+      <NavBar></NavBar>
+      
+      <div>
+        <router-view/>
+      </div>
   </div>
+    
 </template>
 
+<script>
+import NavBar from './components/NavBar';
+
+export default {
+  name: 'App',
+  components:{
+    NavBar,
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    
+  body {
+      background-color: black;
+      color: white !important;
+  }
 
-#nav {
-  padding: 30px;
-}
+  hr {
+      border-color: white;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  .puntero {
+      cursor: pointer;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .img-circle {
+      border-radius: 100%;
+      width: 150px;
+  }
+
+  .card-title,
+  .card-text {
+      color: black;
+  }
+
+  .badge {
+      margin-left: 5px;
+  }
+
+  .btn-outline-success {
+      margin-left: 5px;
+  }
+
+  .img-thumb {
+      width: 50px;
+      height: 50px;
+  }
+
+
+  /* Animaciones */
+
+  .animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+
+  .fast {
+      -webkit-animation-duration: 0.4s;
+      animation-duration: 0.4s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+  }
+
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+
+  .fadeIn {
+      animation-name: fadeIn;
+  }
 </style>
